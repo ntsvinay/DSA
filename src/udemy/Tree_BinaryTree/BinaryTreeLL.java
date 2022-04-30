@@ -174,5 +174,27 @@ public class BinaryTreeLL {
 		System.out.println("not exist ...........");
 
 	}
+	public boolean checkBST(BinaryTreeNode node) {
+		Queue<BinaryTreeNode> qu = new LinkedList<BinaryTreeNode>();
+		qu.add(node);
+		while (!qu.isEmpty()) {
+			BinaryTreeNode crt = qu.remove();
+
+			if (crt.left != null) {
+				if (crt.value < crt.left.value) {
+					return false;
+				}
+				qu.add(crt.left);
+			}
+			if (crt.right != null) {
+				if (crt.value > crt.right.value) {
+					return false;
+				}
+				qu.add(crt.right);
+			}
+		}
+
+		return true;
+	}
 
 }

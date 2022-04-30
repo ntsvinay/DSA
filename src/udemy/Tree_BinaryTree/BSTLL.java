@@ -1,6 +1,7 @@
 package udemy.Tree_BinaryTree;
 
 import java.util.Queue;
+
 import java.util.LinkedList;;
 
 public class BSTLL {
@@ -92,20 +93,21 @@ public class BSTLL {
 		System.out.println("Value does not exist in tree");
 
 	}
+
 	// Search Method
-	  BSTNode search(BSTNode node, int value) {
-	    if (node == null ) {
-	      System.out.println("Value: "+ value+ " not found in BST");
-	      return null;
-	    } else if (node.value == value) {
-	      System.out.println("Value: "+ value+ " found in BST");
-	      return node;
-	    } else if (value < node.value) {
-	      return search(node.left, value);
-	    } else {
-	      return search(node.right, value);
-	    }
-	  }
+	BSTNode search(BSTNode node, int value) {
+		if (node == null) {
+			System.out.println("Value: " + value + " not found in BST");
+			return null;
+		} else if (node.value == value) {
+			System.out.println("Value: " + value + " found in BST");
+			return node;
+		} else if (value < node.value) {
+			return search(node.left, value);
+		} else {
+			return search(node.right, value);
+		}
+	}
 
 	public BSTNode getMinimumNode(BSTNode node) {
 		if (node.left == null) {
@@ -139,6 +141,29 @@ public class BSTLL {
 			}
 		}
 		return node;
+	}
+
+	public boolean checkBST(BSTNode node) {
+		Queue<BSTNode> qu = new LinkedList<BSTNode>();
+		qu.add(node);
+		while (!qu.isEmpty()) {
+			BSTNode crt = qu.remove();
+
+			if (crt.left != null) {
+				if (crt.value < crt.left.value) {
+					return false;
+				}
+				qu.add(crt.left);
+			}
+			if (crt.right != null) {
+				if (crt.value > crt.right.value) {
+					return false;
+				}
+				qu.add(crt.right);
+			}
+		}
+
+		return true;
 	}
 
 }

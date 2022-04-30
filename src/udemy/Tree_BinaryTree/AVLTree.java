@@ -188,4 +188,26 @@ public class AVLTree {
 		return node;
 
 	}
+	public boolean checkBST(BSTNode node) {
+		Queue<BSTNode> qu = new LinkedList<BSTNode>();
+		qu.add(node);
+		while (!qu.isEmpty()) {
+			BSTNode crt = qu.remove();
+
+			if (crt.left != null) {
+				if (crt.value < crt.left.value) {
+					return false;
+				}
+				qu.add(crt.left);
+			}
+			if (crt.right != null) {
+				if (crt.value > crt.right.value) {
+					return false;
+				}
+				qu.add(crt.right);
+			}
+		}
+
+		return true;
+	}
 }

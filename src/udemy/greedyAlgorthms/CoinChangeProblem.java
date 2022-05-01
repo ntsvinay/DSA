@@ -7,7 +7,7 @@ public class CoinChangeProblem {
 	public void coinChange(int[] coins, int c) {
 		Arrays.sort(coins);
 		int index = coins.length - 1;
-		while (true) {
+		while (index>=0) {
 			int coinVal = coins[index];
 			index--;
 			int maxAmount = (c / coinVal) * coinVal;
@@ -22,7 +22,7 @@ public class CoinChangeProblem {
 	}
 
 	public static void main(String[] args) {
-		new CoinChangeProblem().coinChange(new int[] { 1, 2, 5, 10, 100, 1000 }, 1500);
+		new CoinChangeProblem().coinChange(new int[] {186,419,83,408 }, 6249);
 	}
 
 }

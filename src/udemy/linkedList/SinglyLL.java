@@ -115,10 +115,11 @@ public class SinglyLL {
 				tail = head = null;
 
 			}
-		} else {
+		}
+		else {
 			int index = 0;
 			Node node = head;
-			while (index < location - 1) {
+			while (index < location - 1) {	
 				node = node.next;
 				index++;
 			}

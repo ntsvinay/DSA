@@ -19,7 +19,7 @@ public class NumberFactor {
 
 	public static void main(String[] args) {
 		NumberFactor nf = new NumberFactor();
-		System.out.println(nf.findNumberFact(4));
+		System.out.println(nf.findNumberFact(6));
 	}
 
 }

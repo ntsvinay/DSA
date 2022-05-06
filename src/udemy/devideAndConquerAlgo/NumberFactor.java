@@ -3,7 +3,6 @@ package udemy.devideAndConquerAlgo;
 public class NumberFactor {
 
 	public int findNumberFact(int num) {
-		int rslt = 0;
 		if (num == 0 || num == 1 || num == 2) {
 			return 1;
 		}
